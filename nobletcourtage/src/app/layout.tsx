@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { Mulish, Lora } from "next/font/google";
 import clsx from "clsx";
 import "./globals.css";
-import { createClient } from "@prismicio/client";
-
+import * as prismic from"@prismicio/client";
 
 const mulish = Mulish({
   subsets: ["latin"],
@@ -18,13 +17,13 @@ const lora = Lora({
 });
 
 export async function generateMetadata(): Promise<Metadata> {
-  const client = createClient();
+  const client = prismic.createClient("Noblet-Courtage");
   const page = await client.getSingle("settings")
   return {
     title: page.data.site_title || "Noblet Courtage",
-    description: page.data.meta_description || 
+    description: page.data.meta_description || "", 
     openGraph: {
-      images: ['/some-specific-page-image.jpg', ...previousImages],
+      images: [page.data.og_image.url || ""],
     },
   }
 }

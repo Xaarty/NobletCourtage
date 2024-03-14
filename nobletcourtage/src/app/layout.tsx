@@ -4,6 +4,9 @@ import clsx from "clsx";
 import "./globals.css";
 import * as prismic from"@prismicio/client";
 
+import Header from "@component/components/Header";
+import Footer from "@component/components/Footer";
+
 const mulish = Mulish({
   subsets: ["latin"],
   variable: "--font-mulish",
@@ -18,12 +21,13 @@ const lora = Lora({
 
 export async function generateMetadata(): Promise<Metadata> {
   const client = prismic.createClient("Noblet-Courtage");
-  const page = await client.getSingle("settings")
+  const settings = await client.getSingle("settings")
+
   return {
-    title: page.data.site_title || "Noblet Courtage",
-    description: page.data.meta_description || "", 
+    title: settings.data.site_title || "Noblet Courtage",
+    description: settings.data.meta_description || "", 
     openGraph: {
-      images: [page.data.og_image.url || ""],
+      images: [settings.data.og_image.url || ""],
     },
   }
 }
@@ -36,9 +40,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={clsx(lora.variable, mulish.variable)}>
       <body>
-        <header></header>
+        <Header />
         {children}
-        <footer></footer>
+        <Footer />
         </body>
     </html>
   );

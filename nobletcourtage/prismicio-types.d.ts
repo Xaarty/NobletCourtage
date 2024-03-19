@@ -4,37 +4,79 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type SettingDocumentDataSlicesSlice = never;
+type HomepageDocumentDataSlicesSlice = never;
 
 /**
- * Content for Setting documents
+ * Content for Homepage documents
  */
-interface SettingDocumentData {
+interface HomepageDocumentData {
   /**
-   * `slices` field in *Setting*
+   * Title field in *Homepage*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Slice Zone field in *Homepage*
    *
    * - **Field Type**: Slice Zone
    * - **Placeholder**: *None*
-   * - **API ID Path**: setting.slices[]
+   * - **API ID Path**: homepage.slices[]
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
-  slices: prismic.SliceZone<SettingDocumentDataSlicesSlice>;
+  slices: prismic.SliceZone<HomepageDocumentDataSlicesSlice> /**
+   * Meta Title field in *Homepage*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: homepage.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Homepage*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: homepage.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Homepage*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
 }
 
 /**
- * Setting document from Prismic
+ * Homepage document from Prismic
  *
- * - **API ID**: `setting`
+ * - **API ID**: `homepage`
  * - **Repeatable**: `false`
  * - **Documentation**: https://prismic.io/docs/custom-types
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type SettingDocument<Lang extends string = string> =
+export type HomepageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<
-    Simplify<SettingDocumentData>,
-    "setting",
+    Simplify<HomepageDocumentData>,
+    "homepage",
     Lang
   >;
 
@@ -61,6 +103,41 @@ export interface SettingsDocumentDataNavigationItem {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   label: prismic.KeyTextField;
+}
+
+/**
+ * Item in *Settings → Social Network*
+ */
+export interface SettingsDocumentDataSocialNetworkItem {
+  /**
+   * Social network image field in *Settings → Social Network*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.social_network[].social_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  social_image: prismic.ImageField<never>;
+
+  /**
+   * Social network name field in *Settings → Social Network*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.social_network[].social_network_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  social_network_name: prismic.KeyTextField;
+
+  /**
+   * Link field in *Settings → Social Network*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.social_network[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
 }
 
 /**
@@ -110,6 +187,19 @@ interface SettingsDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#group
    */
   navigation: prismic.GroupField<Simplify<SettingsDocumentDataNavigationItem>>;
+
+  /**
+   * Social Network field in *Settings*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.social_network[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  social_network: prismic.GroupField<
+    Simplify<SettingsDocumentDataSocialNetworkItem>
+  >;
 }
 
 /**
@@ -128,7 +218,7 @@ export type SettingsDocument<Lang extends string = string> =
     Lang
   >;
 
-export type AllDocumentTypes = SettingDocument | SettingsDocument;
+export type AllDocumentTypes = HomepageDocument | SettingsDocument;
 
 declare module "@prismicio/client" {
   interface CreateClient {
@@ -140,12 +230,13 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
-      SettingDocument,
-      SettingDocumentData,
-      SettingDocumentDataSlicesSlice,
+      HomepageDocument,
+      HomepageDocumentData,
+      HomepageDocumentDataSlicesSlice,
       SettingsDocument,
       SettingsDocumentData,
       SettingsDocumentDataNavigationItem,
+      SettingsDocumentDataSocialNetworkItem,
       AllDocumentTypes,
     };
   }

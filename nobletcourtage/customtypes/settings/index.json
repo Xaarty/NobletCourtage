@@ -51,6 +51,38 @@
             }
           }
         }
+      },
+      "social_network": {
+        "type": "Group",
+        "config": {
+          "label": "Social Network",
+          "repeat": true,
+          "fields": {
+            "social_image": {
+              "type": "Image",
+              "config": {
+                "label": "Social network image",
+                "constraint": {},
+                "thumbnails": []
+              }
+            },
+            "social_network_name": {
+              "type": "Text",
+              "config": {
+                "label": "Social network name",
+                "placeholder": ""
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
+        }
       }
     }
   }

@@ -8,12 +8,18 @@ export default async function Footer() {
 
     return (
         <footer>
+        <div>
             <Link href="/">{settings.data.site_title}</Link>
+            <div>
+                <p>mnoblet.merevia@gmail.com</p>
+                <p>07 62 90 58 21</p>
+            </div>
+        </div>
         <nav>
             <ul>
-                {settings.data.navigation.map(({link, label}) => (
-                    <li key= {label}>
-                        <PrismicNextLink field={link}>{label}</PrismicNextLink>
+                {settings.data.social_network.map(({social_image, social_network_name, link}) => (
+                    <li key= {social_network_name}>
+                        <PrismicNextLink field={link}>[social_image || ""] {social_network_name}</PrismicNextLink>
                     </li>
                 ))}
             </ul>        

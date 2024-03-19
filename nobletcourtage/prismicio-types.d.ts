@@ -4,7 +4,7 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomepageDocumentDataSlicesSlice = never;
+type HomepageDocumentDataSlicesSlice = PourquoiSlice;
 
 /**
  * Content for Homepage documents
@@ -220,6 +220,81 @@ export type SettingsDocument<Lang extends string = string> =
 
 export type AllDocumentTypes = HomepageDocument | SettingsDocument;
 
+/**
+ * Primary content in *Pourquoi → Primary*
+ */
+export interface PourquoiSliceDefaultPrimary {
+  /**
+   * Heading field in *Pourquoi → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pourquoi.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.TitleField;
+
+  /**
+   * Body 1 field in *Pourquoi → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pourquoi.primary.body_1
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  body_1: prismic.RichTextField;
+
+  /**
+   * Body 2 field in *Pourquoi → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pourquoi.primary.body_2
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  body_2: prismic.RichTextField;
+
+  /**
+   * Body 3 field in *Pourquoi → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pourquoi.primary.body_3
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  body_3: prismic.RichTextField;
+}
+
+/**
+ * Default variation for Pourquoi Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PourquoiSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<PourquoiSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Pourquoi*
+ */
+type PourquoiSliceVariation = PourquoiSliceDefault;
+
+/**
+ * Pourquoi Shared Slice
+ *
+ * - **API ID**: `pourquoi`
+ * - **Description**: Pourquoi
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PourquoiSlice = prismic.SharedSlice<
+  "pourquoi",
+  PourquoiSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -238,6 +313,10 @@ declare module "@prismicio/client" {
       SettingsDocumentDataNavigationItem,
       SettingsDocumentDataSocialNetworkItem,
       AllDocumentTypes,
+      PourquoiSlice,
+      PourquoiSliceDefaultPrimary,
+      PourquoiSliceVariation,
+      PourquoiSliceDefault,
     };
   }
 }

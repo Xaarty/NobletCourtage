@@ -1,5 +1,14 @@
 import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import { JSXMapSerializer, PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import Bounded from "../../components/Bounded";
+import Heading from "@component/components/Heading";
+
+
+const components: JSXMapSerializer = {
+  heading2 : ({children}) => (
+    <Heading as="h1" size="xl" className="bg-neutral-100 drop-shadow-lg first:mt-0 last:mb-0" >{children}</Heading>
+  )
+}
 
 /**
  * Props for `Pourquoi`.
@@ -11,12 +20,14 @@ export type PourquoiProps = SliceComponentProps<Content.PourquoiSlice>;
  */
 const Pourquoi = ({ slice }: PourquoiProps): JSX.Element => {
   return (
-    <section
+    <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      Placeholder component for pourquoi (variation: {slice.variation}) Slices
-    </section>
+      <div className="grid grid-cols-1 place-items-center text-center content-center">
+        <PrismicRichText field={slice.primary.heading} components={components} />
+      </div>
+    </Bounded>
   );
 };
 

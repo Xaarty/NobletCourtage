@@ -9,45 +9,62 @@
 					{
 						"type": "heading2",
 						"content": {
-							"text": "Hurry"
-						}
-					}
-				]
-			},
-			"body_1": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "heading3",
-						"content": {
-							"text": "Setting"
-						}
-					}
-				]
-			},
-			"body_2": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "heading3",
-						"content": {
-							"text": "Label"
-						}
-					}
-				]
-			},
-			"body_3": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "heading3",
-						"content": {
-							"text": "Poetry"
-						}
+							"text": "Pourquoi faire appel à un courtier ?",
+							"spans": []
+						},
+						"direction": "ltr"
 					}
 				]
 			}
 		},
-		"items": []
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"body_1",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Irure quis do magna in enim in do et quis dolor cillum esse non Lorem. Aliquip fugiat veniam in dolor ut eiusmod incididunt amet exercitation est laborum aliquip. Irure labore cillum labore esse pariatur laboris adipisicing dolore commodo aliquip adipisicing qui esse proident."
+									}
+								}
+							]
+						}
+					],
+					[
+						"body_2",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Aute ut eiusmod aute ut et nisi ex ullamco mollit nostrud magna consectetur. Do proident laboris do ad mollit quis."
+									}
+								}
+							]
+						}
+					],
+					[
+						"body_3",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Reprehenderit occaecat aliquip dolore labore aliquip et incididunt Lorem. Incididunt laborum magna et magna excepteur sunt ea ipsum et."
+									}
+								}
+							]
+						}
+					]
+				]
+			}
+		]
 	}
 ]

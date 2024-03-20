@@ -233,33 +233,38 @@ export interface PourquoiSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   heading: prismic.TitleField;
+}
 
+/**
+ * Primary content in *Pourquoi → Items*
+ */
+export interface PourquoiSliceDefaultItem {
   /**
-   * Body 1 field in *Pourquoi → Primary*
+   * Body 1 field in *Pourquoi → Items*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: pourquoi.primary.body_1
+   * - **API ID Path**: pourquoi.items[].body_1
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   body_1: prismic.RichTextField;
 
   /**
-   * Body 2 field in *Pourquoi → Primary*
+   * Body 2 field in *Pourquoi → Items*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: pourquoi.primary.body_2
+   * - **API ID Path**: pourquoi.items[].body_2
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   body_2: prismic.RichTextField;
 
   /**
-   * Body 3 field in *Pourquoi → Primary*
+   * Body 3 field in *Pourquoi → Items*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: pourquoi.primary.body_3
+   * - **API ID Path**: pourquoi.items[].body_3
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   body_3: prismic.RichTextField;
@@ -275,7 +280,7 @@ export interface PourquoiSliceDefaultPrimary {
 export type PourquoiSliceDefault = prismic.SharedSliceVariation<
   "default",
   Simplify<PourquoiSliceDefaultPrimary>,
-  never
+  Simplify<PourquoiSliceDefaultItem>
 >;
 
 /**
@@ -315,6 +320,7 @@ declare module "@prismicio/client" {
       AllDocumentTypes,
       PourquoiSlice,
       PourquoiSliceDefaultPrimary,
+      PourquoiSliceDefaultItem,
       PourquoiSliceVariation,
       PourquoiSliceDefault,
     };

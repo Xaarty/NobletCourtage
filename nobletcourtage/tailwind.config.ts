@@ -4,6 +4,7 @@ const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/slices/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
@@ -11,6 +12,9 @@ const config: Config = {
       fontFamily: {
         body: ["var(--font-lora)"],
         display: ["var(--font-mulish)"],
+      },
+      height: {
+        "50": "50px",
       },
     },
   },

@@ -1,0 +1,14 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"titlehead": {
+				"__TYPE__": "FieldContent",
+				"value": "what",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

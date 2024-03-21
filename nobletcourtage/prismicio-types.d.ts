@@ -218,7 +218,40 @@ export type SettingsDocument<Lang extends string = string> =
     Lang
   >;
 
-export type AllDocumentTypes = HomepageDocument | SettingsDocument;
+type TestDocumentDataSlicesSlice = TestSlice;
+
+/**
+ * Content for test documents
+ */
+interface TestDocumentData {
+  /**
+   * Slice Zone field in *test*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: test.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<TestDocumentDataSlicesSlice>;
+}
+
+/**
+ * test document from Prismic
+ *
+ * - **API ID**: `test`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type TestDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<TestDocumentData>, "test", Lang>;
+
+export type AllDocumentTypes =
+  | HomepageDocument
+  | SettingsDocument
+  | TestDocument;
 
 /**
  * Primary content in *Pourquoi → Primary*
@@ -268,6 +301,16 @@ export interface PourquoiSliceDefaultItem {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   body_3: prismic.RichTextField;
+
+  /**
+   * dssfsd field in *Pourquoi → Items*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pourquoi.items[].dssfsd
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  dssfsd: prismic.ContentRelationshipField;
 }
 
 /**
@@ -300,6 +343,93 @@ export type PourquoiSlice = prismic.SharedSlice<
   PourquoiSliceVariation
 >;
 
+/**
+ * Primary content in *TestHead → Primary*
+ */
+export interface TestSliceDefaultPrimary {
+  /**
+   * titleHead field in *TestHead → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: test.primary.titlehead
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  titlehead: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for TestHead Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TestSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TestSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *TestHead*
+ */
+type TestSliceVariation = TestSliceDefault;
+
+/**
+ * TestHead Shared Slice
+ *
+ * - **API ID**: `test`
+ * - **Description**: Test
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TestSlice = prismic.SharedSlice<"test", TestSliceVariation>;
+
+/**
+ * Primary content in *TestBody → Primary*
+ */
+export interface TestBodySliceDefaultPrimary {
+  /**
+   * titre field in *TestBody → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: test_body.primary.titre
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  titre: prismic.RichTextField;
+}
+
+/**
+ * Default variation for TestBody Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TestBodySliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TestBodySliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *TestBody*
+ */
+type TestBodySliceVariation = TestBodySliceDefault;
+
+/**
+ * TestBody Shared Slice
+ *
+ * - **API ID**: `test_body`
+ * - **Description**: TestBody
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TestBodySlice = prismic.SharedSlice<
+  "test_body",
+  TestBodySliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -317,12 +447,23 @@ declare module "@prismicio/client" {
       SettingsDocumentData,
       SettingsDocumentDataNavigationItem,
       SettingsDocumentDataSocialNetworkItem,
+      TestDocument,
+      TestDocumentData,
+      TestDocumentDataSlicesSlice,
       AllDocumentTypes,
       PourquoiSlice,
       PourquoiSliceDefaultPrimary,
       PourquoiSliceDefaultItem,
       PourquoiSliceVariation,
       PourquoiSliceDefault,
+      TestSlice,
+      TestSliceDefaultPrimary,
+      TestSliceVariation,
+      TestSliceDefault,
+      TestBodySlice,
+      TestBodySliceDefaultPrimary,
+      TestBodySliceVariation,
+      TestBodySliceDefault,
     };
   }
 }

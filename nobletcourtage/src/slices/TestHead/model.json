@@ -1,0 +1,26 @@
+{
+  "id": "test",
+  "type": "SharedSlice",
+  "name": "TestHead",
+  "description": "Test",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "titlehead": {
+          "type": "Text",
+          "config": {
+            "label": "titleHead",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

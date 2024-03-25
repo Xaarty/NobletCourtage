@@ -1,0 +1,43 @@
+{
+  "format": "custom",
+  "id": "arrowcarrousel",
+  "label": "ArrowCarrousel",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
+      "arrowleft": {
+        "type": "Group",
+        "config": {
+          "label": "arrowleft",
+          "repeat": true,
+          "fields": {
+            "arrowlefttriger": {
+              "type": "Boolean",
+              "config": {
+                "label": "arrowleftTriger",
+                "placeholder_false": "false",
+                "placeholder_true": "true",
+                "default_value": false
+              }
+            },
+            "arrows": {
+              "type": "Select",
+              "config": {
+                "label": "arrows",
+                "placeholder": "",
+                "options": ["arrowleft", "arrowright"]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

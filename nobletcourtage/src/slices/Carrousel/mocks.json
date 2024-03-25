@@ -1,0 +1,70 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Noblet Courtage",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"arrowleft": {
+				"__TYPE__": "BooleanContent",
+				"value": true
+			},
+			"arrowright": {
+				"__TYPE__": "BooleanContent",
+				"value": false
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"images",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "img1",
+							"type": "Select"
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"images",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "img2",
+							"type": "Select"
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"images",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "img3",
+							"type": "Select"
+						}
+					]
+				]
+			}
+		]
+	}
+]

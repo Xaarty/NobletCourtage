@@ -4,6 +4,71 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+type CarrouselDocumentDataSlicesSlice = never;
+
+/**
+ * Content for Carrousel documents
+ */
+interface CarrouselDocumentData {
+  /**
+   * Slice Zone field in *Carrousel*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: carrousel.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<CarrouselDocumentDataSlicesSlice> /**
+   * Meta Description field in *Carrousel*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: carrousel.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Carrousel*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: carrousel.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Carrousel*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: carrousel.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Carrousel document from Prismic
+ *
+ * - **API ID**: `carrousel`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type CarrouselDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<CarrouselDocumentData>,
+    "carrousel",
+    Lang
+  >;
+
 type HomepageDocumentDataSlicesSlice = PourquoiSlice;
 
 /**
@@ -249,6 +314,7 @@ export type TestDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<TestDocumentData>, "test", Lang>;
 
 export type AllDocumentTypes =
+  | CarrouselDocument
   | HomepageDocument
   | SettingsDocument
   | TestDocument;
@@ -440,6 +506,9 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      CarrouselDocument,
+      CarrouselDocumentData,
+      CarrouselDocumentDataSlicesSlice,
       HomepageDocument,
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,

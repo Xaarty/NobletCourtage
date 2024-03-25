@@ -64,7 +64,7 @@ export type ArrowcarrouselDocument<Lang extends string = string> =
     Lang
   >;
 
-type HomepageDocumentDataSlicesSlice = PourquoiSlice;
+type HomepageDocumentDataSlicesSlice = CarrouselSlice | PourquoiSlice;
 
 /**
  * Content for Homepage documents

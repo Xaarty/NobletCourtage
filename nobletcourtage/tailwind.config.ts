@@ -8,6 +8,12 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    gridRow: {
+      "row1": "1",
+    },
+    gridColumn: {
+      "col1": "1",
+    },
     extend: {
       fontFamily: {
         body: ["var(--font-lora)"],

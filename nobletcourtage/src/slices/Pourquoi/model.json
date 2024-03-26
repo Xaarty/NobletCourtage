@@ -23,38 +23,37 @@
         }
       },
       "items": {
-        "body_1": {
+        "bodytitle": {
           "type": "StructuredText",
           "config": {
-            "label": "Body 1",
+            "label": "BodyTitle",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+            "multi": "heading3"
           }
         },
-        "body_2": {
+        "bodysubtitle": {
           "type": "StructuredText",
           "config": {
-            "label": "Body 2",
+            "label": "BodySubTitle",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+            "multi": "heading4,strong,em"
           }
         },
-        "body_3": {
-          "type": "StructuredText",
+        "bodyimage": {
+          "type": "Image",
           "config": {
-            "label": "Body 3",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+            "label": "BodyImage",
+            "constraint": {},
+            "thumbnails": []
           }
         },
-        "dssfsd": {
-          "type": "Link",
+        "bodytext": {
+          "type": "Text",
           "config": {
-            "label": "dssfsd",
-            "select": "document"
+            "label": "BodyText",
+            "placeholder": ""
           }
         }
       }

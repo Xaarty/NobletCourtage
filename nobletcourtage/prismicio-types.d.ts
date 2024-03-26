@@ -364,16 +364,6 @@ export interface CarrouselSliceDefaultItem {
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   images: prismic.SelectField<"img1" | "img2" | "img3">;
-
-  /**
-   * dot field in *Carrousel → Items*
-   *
-   * - **Field Type**: Embed
-   * - **Placeholder**: *None*
-   * - **API ID Path**: carrousel.items[].dot
-   * - **Documentation**: https://prismic.io/docs/field#embed
-   */
-  dot: prismic.EmbedField;
 }
 
 /**
@@ -426,44 +416,44 @@ export interface PourquoiSliceDefaultPrimary {
  */
 export interface PourquoiSliceDefaultItem {
   /**
-   * Body 1 field in *Pourquoi → Items*
+   * BodyTitle field in *Pourquoi → Items*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: pourquoi.items[].body_1
+   * - **API ID Path**: pourquoi.items[].bodytitle
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  body_1: prismic.RichTextField;
+  bodytitle: prismic.RichTextField;
 
   /**
-   * Body 2 field in *Pourquoi → Items*
+   * BodySubTitle field in *Pourquoi → Items*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: pourquoi.items[].body_2
+   * - **API ID Path**: pourquoi.items[].bodysubtitle
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  body_2: prismic.RichTextField;
+  bodysubtitle: prismic.RichTextField;
 
   /**
-   * Body 3 field in *Pourquoi → Items*
+   * BodyImage field in *Pourquoi → Items*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: pourquoi.items[].body_3
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   * - **API ID Path**: pourquoi.items[].bodyimage
+   * - **Documentation**: https://prismic.io/docs/field#image
    */
-  body_3: prismic.RichTextField;
+  bodyimage: prismic.ImageField<never>;
 
   /**
-   * dssfsd field in *Pourquoi → Items*
+   * BodyText field in *Pourquoi → Items*
    *
-   * - **Field Type**: Content Relationship
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: pourquoi.items[].dssfsd
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   * - **API ID Path**: pourquoi.items[].bodytext
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  dssfsd: prismic.ContentRelationshipField;
+  bodytext: prismic.KeyTextField;
 }
 
 /**

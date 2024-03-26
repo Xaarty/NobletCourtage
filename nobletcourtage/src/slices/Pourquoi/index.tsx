@@ -27,6 +27,17 @@ const Pourquoi = ({ slice }: PourquoiProps): JSX.Element => {
       <div className="grid grid-cols-1 place-items-center text-center content-center">
         <PrismicRichText field={slice.primary.heading} components={components} />
       </div>
+      <div>
+        <div>
+        {slice.items.map((item, index) =>(
+            <div key={index} className="w-28 bg" >
+              {item.bodytitle && (
+                <PrismicRichText field={item.bodytitle} />
+              )}     
+            </div>
+          ))}
+        </div>
+      </div>
     </Bounded>
   );
 };

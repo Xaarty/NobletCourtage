@@ -22,55 +22,65 @@
 				"__TYPE__": "GroupItemContent",
 				"value": [
 					[
-						"body_1",
+						"bodytitle",
 						{
 							"__TYPE__": "StructuredTextContent",
 							"value": [
 								{
-									"type": "paragraph",
+									"type": "heading3",
 									"content": {
-										"text": "Irure quis do magna in enim in do et quis dolor cillum esse non Lorem. Aliquip fugiat veniam in dolor ut eiusmod incididunt amet exercitation est laborum aliquip. Irure labore cillum labore esse pariatur laboris adipisicing dolore commodo aliquip adipisicing qui esse proident."
+										"text": "Accident"
 									}
 								}
 							]
 						}
 					],
 					[
-						"body_2",
+						"bodysubtitle",
 						{
 							"__TYPE__": "StructuredTextContent",
 							"value": [
 								{
-									"type": "paragraph",
+									"type": "heading4",
 									"content": {
-										"text": "Aute ut eiusmod aute ut et nisi ex ullamco mollit nostrud magna consectetur. Do proident laboris do ad mollit quis."
+										"text": "Activity"
 									}
 								}
 							]
 						}
 					],
 					[
-						"body_3",
+						"bodyimage",
 						{
-							"__TYPE__": "StructuredTextContent",
-							"value": [
-								{
-									"type": "paragraph",
-									"content": {
-										"text": "Reprehenderit occaecat aliquip dolore labore aliquip et incididunt Lorem. Incididunt laborum magna et magna excepteur sunt ea ipsum et."
-									}
-								}
-							]
+							"origin": {
+								"id": "main",
+								"url": "https://images.unsplash.com/photo-1586952518485-11b180e92764",
+								"width": 4172,
+								"height": 4000
+							},
+							"url": "https://images.unsplash.com/photo-1586952518485-11b180e92764",
+							"width": 4172,
+							"height": 4000,
+							"edit": {
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								},
+								"background": "transparent"
+							},
+							"credits": null,
+							"alt": null,
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
 						}
 					],
 					[
-						"dssfsd",
+						"bodytext",
 						{
-							"__TYPE__": "LinkContent",
-							"value": {
-								"__TYPE__": "DocumentLink",
-								"id": "mock_document_id"
-							}
+							"__TYPE__": "FieldContent",
+							"value": "select",
+							"type": "Text"
 						}
 					]
 				]

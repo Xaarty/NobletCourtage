@@ -52,13 +52,6 @@
               "img3"
             ]
           }
-        },
-        "dot": {
-          "type": "Embed",
-          "config": {
-            "label": "dot",
-            "placeholder": ""
-          }
         }
       }
     }

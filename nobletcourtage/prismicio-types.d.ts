@@ -364,6 +364,16 @@ export interface CarrouselSliceDefaultItem {
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   images: prismic.SelectField<"img1" | "img2" | "img3">;
+
+  /**
+   * dot field in *Carrousel → Items*
+   *
+   * - **Field Type**: Embed
+   * - **Placeholder**: *None*
+   * - **API ID Path**: carrousel.items[].dot
+   * - **Documentation**: https://prismic.io/docs/field#embed
+   */
+  dot: prismic.EmbedField;
 }
 
 /**

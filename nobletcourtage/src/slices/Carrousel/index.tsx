@@ -75,6 +75,11 @@ const Carrousel = ({ slice }: CarrouselProps): JSX.Element => {
             </div>
           ))}
         </div>
+        <div className="row-row1 col-col1 grid grid-cols-cols3auto gap-2 justify-center content-end pb-2">
+          {slice.items.map((_, index) =>(
+                <button key={index} onClick={() => setSlide(index)} className={slide === index ? "bg-white w-3 h-3 border-white border-3 rounded-full bg-transparent" : "w-3 h-3 border-white border-3 rounded-full bg-transparent"}></button>
+          ))}
+        </div>
         <div className="row-row1 col-col1 grid content-center justify-between">
           <button className="row-row1 ml-2" onClick={slideLeft}>
             <IconContext.Provider value={{ color: "white", size: "34px"}}>

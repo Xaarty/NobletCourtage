@@ -8,6 +8,12 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    borderWidth: {
+      "3": "3px"
+    },
+    gridTemplateColumns: {
+      "cols3auto" : "auto auto auto"
+    },
     gridRow: {
       "row1": "1",
     },

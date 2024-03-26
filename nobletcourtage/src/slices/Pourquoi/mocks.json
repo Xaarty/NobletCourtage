@@ -78,9 +78,15 @@
 					[
 						"bodytext",
 						{
-							"__TYPE__": "FieldContent",
-							"value": "select",
-							"type": "Text"
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Aliqua incididunt mollit esse nostrud."
+									}
+								}
+							]
 						}
 					]
 				]

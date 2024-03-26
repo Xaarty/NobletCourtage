@@ -448,12 +448,12 @@ export interface PourquoiSliceDefaultItem {
   /**
    * BodyText field in *Pourquoi → Items*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
    * - **API ID Path**: pourquoi.items[].bodytext
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  bodytext: prismic.KeyTextField;
+  bodytext: prismic.RichTextField;
 }
 
 /**

@@ -82,7 +82,7 @@ const Carrousel = ({ slice }: CarrouselProps): JSX.Element => {
         </div>
         <div className="row-row1 col-col1 grid content-center justify-between">
           <button className="row-row1 ml-2" onClick={slideLeft}>
-            <IconContext.Provider value={{ color: "white", size: "34px"}}>
+            <IconContext.Provider value={{ color: "white", size: "30px"}}>
               <div>
                 <IoMdArrowBack />
               </div>
@@ -92,7 +92,7 @@ const Carrousel = ({ slice }: CarrouselProps): JSX.Element => {
             <PrismicRichText components={components} field={slice.primary.heading} />
           </div>
           <button className="row-row1 mr-2" onClick={slideRight}>
-          <IconContext.Provider value={{ color: "white", size: "34px"}}>
+          <IconContext.Provider value={{ color: "white", size: "30px"}}>
               <div>
                 <IoMdArrowForward />
               </div>

@@ -9,6 +9,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      spacing: {
+        "sm":"10px"
+      },
       dropShadow: {
         "shadow1" : "5px 1px 4px 0 rgb(0, 0, 0, 0.75)"
       },

@@ -9,6 +9,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        'mini' : {"max": "450px"}
+      },
       spacing: {
         "sm":"10px"
       },
@@ -34,19 +37,25 @@ const config: Config = {
         "20" : "20px"
       },
       gap: {
-        "5" : "5px"
+        "5" : "5px",
+        "21%" : "18%"
       },
       backgroundColor: {
         "darkgrey" : "rgb(217 217 217)"
       },
       borderWidth: {
-        "3": "3px"
+        "3": "3px",
+        "1" : "1px"
       },
       gridTemplateColumns: {
-        "cols3auto" : "auto auto auto"
+        "cols3auto" : "auto auto auto",
+        "cols2auto" : "auto auto",
+        "footer" : "40% auto"
       },
       gridRow: {
         "row1": "1",
+        "row2" : "2",
+        "row3" : "3"
       },
       gridColumn: {
         "col1": "1",

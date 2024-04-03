@@ -50,7 +50,7 @@ const Pourquoi = ({ slice }: PourquoiProps): JSX.Element => {
           ))}
         </div>
         {slice.items.map((item, index) =>(
-          <div className={ slide === index ? "bg-white rounded-lg justify-center text-center" : "bg-white rounded-lg justify-center text-center   hidden "}>
+          <div className={ slide === index ? "bg-white rounded-lg justify-center text-center" : "bg-white rounded-lg justify-center text-center hidden "}>
             <PrismicRichText field={item.bodysubtitle} components={components} />
             <PrismicNextImage field={item.bodyimage} className="w-84,6 object-cover h-100 m-auto"/>
             <PrismicRichText field={item.bodytext} components={{paragraph : ({children}) => (<p className="text-sm pl-6 pr-6 pb-2 pt-4 font-display" >{children}</p>)}}/>

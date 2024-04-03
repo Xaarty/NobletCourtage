@@ -64,7 +64,10 @@ export type ArrowcarrouselDocument<Lang extends string = string> =
     Lang
   >;
 
-type HomepageDocumentDataSlicesSlice = CarrouselSlice | PourquoiSlice;
+type HomepageDocumentDataSlicesSlice =
+  | ValeursSlice
+  | CarrouselSlice
+  | PourquoiSlice;
 
 /**
  * Content for Homepage documents
@@ -573,6 +576,81 @@ export type TestBodySlice = prismic.SharedSlice<
   TestBodySliceVariation
 >;
 
+/**
+ * Primary content in *Valeurs → Primary*
+ */
+export interface ValeursSliceDefaultPrimary {
+  /**
+   * Valeurs field in *Valeurs → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: valeurs.primary.valeurs
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  valeurs: prismic.RichTextField;
+
+  /**
+   * MainImage field in *Valeurs → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: valeurs.primary.mainimage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  mainimage: prismic.ImageField<never>;
+
+  /**
+   * Name field in *Valeurs → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: valeurs.primary.name
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  name: prismic.RichTextField;
+
+  /**
+   * Description field in *Valeurs → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: valeurs.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+}
+
+/**
+ * Default variation for Valeurs Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ValeursSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ValeursSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Valeurs*
+ */
+type ValeursSliceVariation = ValeursSliceDefault;
+
+/**
+ * Valeurs Shared Slice
+ *
+ * - **API ID**: `valeurs`
+ * - **Description**: Valeurs
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ValeursSlice = prismic.SharedSlice<
+  "valeurs",
+  ValeursSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -615,6 +693,10 @@ declare module "@prismicio/client" {
       TestBodySliceDefaultPrimary,
       TestBodySliceVariation,
       TestBodySliceDefault,
+      ValeursSlice,
+      ValeursSliceDefaultPrimary,
+      ValeursSliceVariation,
+      ValeursSliceDefault,
     };
   }
 }

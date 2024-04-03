@@ -18,6 +18,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "valeurs": {
+              "type": "SharedSlice"
+            },
             "carrousel": {
               "type": "SharedSlice"
             },

@@ -7,4 +7,5 @@ export const components = {
   pourquoi: dynamic(() => import("./Pourquoi")),
   test: dynamic(() => import("./TestHead")),
   test_body: dynamic(() => import("./TestBody")),
+  valeurs: dynamic(() => import("./Valeurs")),
 };

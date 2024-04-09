@@ -109,13 +109,13 @@ export default Carrousel;
 
 
 function Img_1() {
-  return <img className="h-48 object-cover w-full" src="https://media.discordapp.net/attachments/643557236689338382/1216147962317504512/pexels-frans-van-heerden-1438832.jpg?ex=6611ca0d&is=65ff550d&hm=328be102c1c86daca360c0f9eb51549e599d8d2a3fccaeac0ace8de95bd0d9fc&=&format=webp&width=1230&height=733"></img>
+  return <img className="h-48 object-cover w-full" src="../../assets/maison_1.webp" alt="maison"></img>
 }
 
 function Img_2() {
-  return <img className="h-48 object-cover w-full" src="https://media.discordapp.net/attachments/643557236689338382/1216147958563733715/pexels-binyamin-mellish-186077.jpg?ex=6611ca0c&is=65ff550c&hm=35fe01e4970f87dfe7e404386b39a5cbbab96bfad2cb86241e858af2ab3aa1dd&=&format=webp&width=1075&height=733"></img>
+  return <img className="h-48 object-cover w-full" src="../../assets/maison_1.webp" alt="maison"></img>
 }
 
 function Img_3() {
-  return <img className="h-48 object-cover w-full" src="https://media.discordapp.net/attachments/643557236689338382/1216147959670898738/pexels-chris-goodwin-32870.jpg?ex=6611ca0c&is=65ff550c&hm=7d77ed0938a4d3a437ab6573f93f2aa41bc8190459dc1fdbf1b7761ba57ddabf&=&format=webp&width=1225&height=733"></img>
+  return <img className="h-48 object-cover w-full" src="../../assets/maison_1.webp" alt="maison"></img>
 }

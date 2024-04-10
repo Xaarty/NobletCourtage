@@ -33,16 +33,16 @@ const Valeurs = ({ slice }: ValeursProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation} 
     >
-      <div className="bg-slate-200 h-full pb-1">
+      <div className="bg-slate-200 h-full pb-1 shadow-xl">
         <div className="grid h-16 content-center justify-center"><PrismicRichText components={components} field={slice.primary.valeurs} /></div>
-        <div className="grid grid-cols-2 bg-white ml-1 mr-1 rounded">
-          <div className="grid text-center ml-2.5 mr-1.5">
+        <div className="grid row-row2 md:grid-rows-none md:grid-cols-2 bg-white ml-1 mr-1 rounded md:m-2">
+          <div className="grid text-center ml-2.5 mr-2.5 md:mb-2">
             <PrismicRichText field={slice.primary.name} components={components}/>
             <PrismicNextImage field={slice.primary.mainimage} />
           </div>
-          <div className="flex text-center mr-2.5 gap-1.5">
-            <div className="w-1 border-1 border-black m-1"></div>
-            <PrismicRichText field={slice.primary.description}   components={{paragraph : ({children}) => (<p className="text-sm pl-6 pr-6 pb-4 pt-4 font-display" >{children}</p>)}}/>
+          <div className="flex flex-col md:flex-row text-center md:mr-2.5 gap-1.5 ">
+            <div className="w-auto border-1 border-black m-2"></div>
+            <PrismicRichText field={slice.primary.description}   components={{paragraph : ({children}) => (<p className="text-sm pl-6 pr-6 pb-4 pt-4 font-display grid content-center" >{children}</p>)}}/>
           </div>
           
         </div>

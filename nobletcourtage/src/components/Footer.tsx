@@ -19,10 +19,10 @@ export default async function Footer() {
                     <p className="text-sm font-medium">07 62 90 58 21</p>
                 </div>
                 <nav className="grid content-center">
-                    <ul className="grid grid-cols-cols3auto content-center justify-end gap-6 mini:grid-rows-3 mini:grid-cols-1 mini:gap-0 mini:">
+                    <ul className="grid grid-cols-cols3auto content-center justify-end gap-6 mini:grid-rows-3 mini:grid-cols-1 mini:gap-1 mini:">
                         {settings.data.social_network.map(({social_image, social_network_name, link}) => (
                             <li key= {social_network_name}>
-                                <PrismicNextLink field={link} className="text-sm grid mini:grid-cols-cols2auto mini:justify-end mini:content-center mini:gap-2"><PrismicNextImage field={social_image} className="w-8 h-8 m-auto object-cover"/> <p className="grid content-center">{social_network_name}</p></PrismicNextLink>
+                                <PrismicNextLink field={link} className="text-sm grid mini:grid-cols-cols2auto mini:justify-end mini:content-center mini:gap-2"><PrismicNextImage field={social_image} className="w-8 h-8 m-auto object-cover"/> <p className="grid content-center mini:w-16 mini:justify-end">{social_network_name}</p></PrismicNextLink>
                             </li>
                         ))}
                     </ul>        

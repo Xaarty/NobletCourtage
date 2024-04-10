@@ -50,7 +50,11 @@ const config: Config = {
       gridTemplateColumns: {
         "cols3auto" : "auto auto auto",
         "cols2auto" : "auto auto",
-        "footer" : "40% auto"
+        "footer" : "auto auto",
+        "cols5auto" : "auto auto auto auto auto auto"
+      },
+      gridTemplateRows: {
+        "rows2auto" : "auto auto"
       },
       gridRow: {
         "row1": "1",

@@ -65,6 +65,7 @@ export type ArrowcarrouselDocument<Lang extends string = string> =
   >;
 
 type HomepageDocumentDataSlicesSlice =
+  | AvisSlice
   | ValeursSlice
   | CarrouselSlice
   | PourquoiSlice;
@@ -316,6 +317,94 @@ export type AllDocumentTypes =
   | HomepageDocument
   | SettingsDocument
   | TestDocument;
+
+/**
+ * Primary content in *Avis → Primary*
+ */
+export interface AvisSliceDefaultPrimary {
+  /**
+   * Title field in *Avis → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: avis.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *Avis → Items*
+ */
+export interface AvisSliceDefaultItem {
+  /**
+   * CardTitle field in *Avis → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: avis.items[].cardtitle
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  cardtitle: prismic.RichTextField;
+
+  /**
+   * Stars field in *Avis → Items*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: starfilled
+   * - **API ID Path**: avis.items[].stars
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  stars: prismic.SelectField<"starfilled" | "starempty", "filled">;
+
+  /**
+   * CardText field in *Avis → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: avis.items[].cardtext
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  cardtext: prismic.RichTextField;
+
+  /**
+   * BackgroundSvg field in *Avis → Items*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: avis.items[].backgroundsvg
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  backgroundsvg: prismic.SelectField<"Svg" | "Svg2">;
+}
+
+/**
+ * Default variation for Avis Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AvisSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<AvisSliceDefaultPrimary>,
+  Simplify<AvisSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Avis*
+ */
+type AvisSliceVariation = AvisSliceDefault;
+
+/**
+ * Avis Shared Slice
+ *
+ * - **API ID**: `avis`
+ * - **Description**: Avis
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AvisSlice = prismic.SharedSlice<"avis", AvisSliceVariation>;
 
 /**
  * Primary content in *Carrousel → Primary*
@@ -675,6 +764,11 @@ declare module "@prismicio/client" {
       TestDocumentData,
       TestDocumentDataSlicesSlice,
       AllDocumentTypes,
+      AvisSlice,
+      AvisSliceDefaultPrimary,
+      AvisSliceDefaultItem,
+      AvisSliceVariation,
+      AvisSliceDefault,
       CarrouselSlice,
       CarrouselSliceDefaultPrimary,
       CarrouselSliceDefaultItem,

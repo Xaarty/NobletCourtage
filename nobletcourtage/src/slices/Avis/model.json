@@ -1,0 +1,70 @@
+{
+  "id": "avis",
+  "type": "SharedSlice",
+  "name": "Avis",
+  "description": "Avis",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading2"
+          }
+        }
+      },
+      "items": {
+        "cardtitle": {
+          "type": "StructuredText",
+          "config": {
+            "label": "CardTitle",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "stars": {
+          "type": "Select",
+          "config": {
+            "label": "Stars",
+            "placeholder": "",
+            "options": [
+              "starfilled",
+              "starempty"
+            ],
+            "default_value": "starfilled"
+          }
+        },
+        "cardtext": {
+          "type": "StructuredText",
+          "config": {
+            "label": "CardText",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "backgroundsvg": {
+          "type": "Select",
+          "config": {
+            "label": "BackgroundSvg",
+            "placeholder": "",
+            "options": [
+              "Svg",
+              "Svg2"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

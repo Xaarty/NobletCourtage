@@ -109,13 +109,13 @@ export default Carrousel;
 
 
 function Img_1() {
-  return <img className="h-48 object-cover w-full" src="../../assets/maison_1.webp" alt="maison"></img>
+  return <img className="h-48 object-cover w-full" src="./maison_1.webp" alt="maison"></img>
 }
 
 function Img_2() {
-  return <img className="h-48 object-cover w-full" src="../../assets/maison_1.webp" alt="maison"></img>
+  return <img className="h-48 object-cover w-full" src="./maison_2.webp" alt="maison"></img>
 }
 
 function Img_3() {
-  return <img className="h-48 object-cover w-full" src="../../assets/maison_1.webp" alt="maison"></img>
+  return <img className="h-48 object-cover w-full" src="./maison_3.webp" alt="maison"></img>
 }

@@ -34,7 +34,7 @@ const Valeurs = ({ slice }: ValeursProps): JSX.Element => {
       data-slice-variation={slice.variation} 
     >
       <div className="bg-slate-200 h-full pb-1 shadow-xl">
-        <div className="grid h-16 content-center justify-center"><PrismicRichText components={components} field={slice.primary.valeurs} /></div>
+        <div className="grid h-16 content-center justify-center" id="Valeurs"><PrismicRichText components={components} field={slice.primary.valeurs} /></div>
         <div className="grid row-row2 md:grid-rows-none md:grid-cols-2 bg-white ml-1 mr-1 rounded md:m-2">
           <div className="grid text-center ml-2.5 mr-2.5 md:mb-2">
             <PrismicRichText field={slice.primary.name} components={components}/>

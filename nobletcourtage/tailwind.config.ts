@@ -64,6 +64,9 @@ const config: Config = {
       gridColumn: {
         "col1": "1",
       },
+      fill: {
+        "slate500": "#64748b"
+      },
     },
   },
   plugins: [],
